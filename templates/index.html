@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="/base.css">
+  <title>{% block title %}{{ config.title }}{% endblock %}</title>
+</head>
+<body>
+  <nav>
+    <span>
+  {{ config.title }}
+    </span>
+    {% for menu in config.extra.nav_items %}
+    <a href="{{ menu.url | replace(from="$BASE_URL", to=config.base_url) }}">
+    {{ menu.name }}
+    </a>
+    {% endfor %}
+  </nav>
+  <main class="container">
+{% block content %}
+<h1 class="title">
+  {{ section.title }}
+</h1>
+
+{{ section.content | safe }}
+
+<hr>
+
+Click <a href="{{ get_url(path='@/posts/_index.md') }}"> here</a> to see my
+posts.
+{% endblock content %}
+  </main>
+  <footer>
+    {% for foot in config.extra.feet %}
+    <a href="{{ foot.url | replace(from="$BASE_URL", to=config.base_url) }}">
+    {{ foot.name }}
+    </a>
+    {% endfor %}
+  </footer>
+</body>
+</html>
