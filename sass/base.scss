@@ -5,8 +5,6 @@
   src:url('/fonts/SourceCodePro-VariableFont_wght.ttf');
 }
 
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700');
-
 /**
  * Style variables
  */
@@ -89,23 +87,17 @@ footer {
   padding-top:calc($padding-sz * 4);
 }
 
-//nav a:before {
-//  content: "/";
-//  text-decoration: underline;
-//  text-decoration-thickness: 2pt;
-//}
-
 nav * {
   padding: $padding-sz;
   box-sizing:border-box;
 }
 
 nav a {
-  text-decoration: underline;
-  text-decoration-thickness: 2pt;
+  text-decoration: none;
 
   background-color: var(--color-bg-l);
   border-left: $padding-sz solid var(--color-fg-d);
+  font-weight:600;
 }
 
 nav a:hover {
