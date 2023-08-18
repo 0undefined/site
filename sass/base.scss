@@ -141,3 +141,7 @@ width: 95%; }
 hr { border: none; border-top: var(--border); }
 
 main { width: $container-width;  max-width: $container-max-width;  margin-right: auto;  margin-left: auto; flex-grow:1; overflow-y: scroll;}
+
+.timestamp {
+  float:right;
+}

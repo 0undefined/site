@@ -12,7 +12,7 @@
   <nav>
     <span>{{ config.title }}</span>
     {% for menu in config.extra.nav_items %}
-    <a href="{{ menu.url | replace(from="$BASE_URL", to=config.base_url) }}">
+    <a href="{{ menu.url | replace(from="$BASE_URL", to=config.base_url) | safe }}">
     {{ menu.name }}
     </a>
     {% endfor %}
@@ -29,7 +29,7 @@ posts.
   </main>
   <footer>
     {% for foot in config.extra.feet %}
-    <a href="{{ foot.url | replace(from="$BASE_URL", to=config.base_url) }}">
+    <a href="{{ foot.url | replace(from="$BASE_URL", to=config.base_url) | safe }}">
     {{ foot.name }}
     </a>
     {% endfor %}
