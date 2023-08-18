@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700');
+
+/**
+ * Style variables
+ */
+$base-font-family:    'Source Code Pro', monospace !default;
+$base-font-size:      12.5pt !default;
+$mobile-font-size:    12pt   !default;
+$base-line-height:    1.5    !default;
+$container-width:     90%    !default;
+$container-max-width: 60rem  !default;
+$padding-sz:          6pt !default;
+
+:root {
+  --color-bg:          #1d1a21;
+  --color-bg-l:        #2d2a31;
+  --color-fg:          #efefef;
+  --color-fg-d:        #999;
+  --color-accent:      #ff7a93;
+  --color-header:      var(--color-accent);//#70b950;
+  --color-list-point:  var(--color-accent);//#8197bf;
+
+
+  --border:            dashed 2pt var(--color-fg-d);
+}
+:root {
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0px;
+  margin-top: 22pt;
+
+  font-size: $base-font-size;
+  font-weight: bold;
+
+  color: var(--color-header);
+}
+p, ul, ol {
+  margin: 0px;
+  color: var(--color-fg);
+}
+a {
+  text-decoration: underline;
+  text-decoration-thickness: 1pt;
+  color: var(--color-fg);
+  padding: 1pt;
+}
+a:hover { color: var(--color-bg); background-color: var(--color-fg); }
+
+@media only screen and (max-device-width: 500px) { * { font-size: $mobile-font-size !important; } }
+
+body {
+  margin:0;
+  padding:0;
+  height:100vh;
+  display:flex;
+  flex-direction: column;
+  gap: $padding-sz;
+
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height !important;
+
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+}
+
+footer,
+nav {
+  margin:0;
+  display:flex;
+  gap: $padding-sz;
+  padding:$padding-sz;
+}
+
+nav {
+  text-align: left;
+}
+
+footer {
+  justify-content:center;
+  padding-top:calc($padding-sz * 4);
+}
+
+//nav a:before {
+//  content: "/";
+//  text-decoration: underline;
+//  text-decoration-thickness: 2pt;
+//}
+
+nav * {
+  padding: $padding-sz;
+  box-sizing:border-box;
+}
+
+nav a {
+  text-decoration: underline;
+  text-decoration-thickness: 2pt;
+
+  background-color: var(--color-bg-l);
+  border-left: $padding-sz solid var(--color-fg-d);
+}
+
+nav a:hover {
+  border-left-color: var(--color-accent);
+  color: var(--color-accent) !important;
+  background-color: var(--color-bg-l);
+  transition: 250ms ease-in-out;
+}
+
+// Headers
+h1:before { content: "#";       margin-right: 9px; }
+h2:before { content: "##";      margin-right: 9px; }
+h3:before { content: "###";     margin-right: 9px; }
+h4:before { content: "####";    margin-right: 9px; }
+h5:before { content: "#####";   margin-right: 9px; }
+h6:before { content: "######";  margin-right: 9px; }
+
+// Lists
+li:before { color: var(--color-list-point); margin-right: 1em; left: -1em; position: absolute; }
+
+:not(.menu) > ul { list-style: none;  padding-left: 0; list-style-type: none;
+width: 95%; }
+:not(.menu) > ul > li { position: relative; left: 1em; }
+:not(.menu) > ul > li:before { content: "*"; }
+:not(.menu) > ul > li > ul > li:before { content: "+" }
+:not(.menu) > ul > li > ul > li > ul > li:before { content: "-" }
+
+:not(.menu) > ol { list-style: none;  padding-left: 0; counter-reset: li }
+:not(.menu) > ol ol { padding-left: 2em }
+:not(.menu) > ol > li:before { content: counter(li) "."; color: var(--color-list-point); margin-right: 9px; counter-increment: li }
+
+//
+hr { border: none; border-top: var(--border); }
+
+main { width: $container-width;  max-width: $container-max-width;  margin-right: auto;  margin-left: auto; flex-grow:1; overflow-y: scroll;}

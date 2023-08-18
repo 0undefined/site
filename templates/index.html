@@ -10,9 +10,7 @@
 </head>
 <body>
   <nav>
-    <span>
-  {{ config.title }}
-    </span>
+    <span>{{ config.title }}</span>
     {% for menu in config.extra.nav_items %}
     <a href="{{ menu.url | replace(from="$BASE_URL", to=config.base_url) }}">
     {{ menu.name }}
@@ -21,10 +19,6 @@
   </nav>
   <main class="container">
 {% block content %}
-<h1 class="title">
-  {{ section.title }}
-</h1>
-
 {{ section.content | safe }}
 
 <hr>
