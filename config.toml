@@ -13,4 +13,16 @@ build_search_index = true
 highlight_code = true
 
 [extra]
-# Put all your custom variables here
+
+nav_items = [
+  {name = "index", url = "$BASE_URL"},
+
+  {name = "projects", url = "$BASE_URL/projects"},
+  {name = "posts", url = "$BASE_URL/posts"},
+  {name = "about me", url = "$BASE_URL/about"},
+]
+
+feet = [
+  {name = "github", url = "https://github.com/0undefined", newtab = true},
+  {name = "twitter", url = "https://twitter.com/OscarNelin", newtab = true},
+]
