@@ -15,8 +15,3 @@ I am partly proud of.
   ![Github top language](https://img.shields.io/github/languages/top/0undefined/btree?cacheSeconds=18000)
 
   C implementation of the B-Tree datastructure according to CLRS.
-
-* A test
-  + to nest
-    - the best
-      * god said it couldn't be done
