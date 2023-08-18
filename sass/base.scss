@@ -1,11 +1,16 @@
 @charset "utf-8";
 
+@font-face {
+  font-family:sourcecodepro;
+  src:url('/fonts/SourceCodePro-VariableFont_wght.ttf');
+}
+
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700');
 
 /**
  * Style variables
  */
-$base-font-family:    'Source Code Pro', monospace !default;
+$base-font-family:    sourcecodepro, monospace !default;
 $base-font-size:      12.5pt !default;
 $mobile-font-size:    12pt   !default;
 $base-line-height:    1.5    !default;
