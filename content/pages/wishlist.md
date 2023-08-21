@@ -20,3 +20,14 @@ men virker som en guideline/inspiration.
 
 ## Værktøj
 * [Fugepistol, Convoy-Super12](https://www.silvan.dk/tajima-fugepistol-convoy-super12?id=2643-5364791), 209,95
+
+
+
+## Fælles ønskeliste
+
+### Brætspil
+
+* [hive](https://www.faraos.dk/games/braetspil/g-h-i/hive/hive/hive-hive-grundspil)
+* [Wingspan European expansion](https://www.pricerunner.dk/pl/613-5151675/Braetspil/Stonemaier-Wingspan-European-Expansion-Sammenlign-Priser) (på engelsk)
+* [7 Wonders](https://www.pricerunner.dk/pl/613-5276286/Braetspil/Repos-Production-7-Wonders-Second-Edition-Sammenlign-Priser)
+* [Partners 25års jubilæum](https://www.pricerunner.dk/pl/613-5276286/Braetspil/Repos-Production-7-Wonders-Second-Edition-Sammenlign-Priser)
