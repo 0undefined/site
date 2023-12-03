@@ -125,14 +125,16 @@ width: 95%; }
 :not(.menu) > ul > li > ul > li:before { content: "+" }
 :not(.menu) > ul > li > ul > li > ul > li:before { content: "-" }
 
-:not(.menu) > ol { list-style: none;  padding-left: 0; counter-reset: li }
+:not(.menu) > ol { list-style: none; padding-left: 0px; counter-reset: li }
 :not(.menu) > ol ol { padding-left: 2em }
-:not(.menu) > ol > li:before { content: counter(li) "."; color: var(--color-list-point); margin-right: 9px; counter-increment: li }
+:not(.menu) > ol > li { position: relative; left: 1em; padding-left:$padding-sz;}
+:not(.menu) > ol > li::before { content: counter(li) ". "; color: var(--color-list-point); margin-right: 9px; counter-increment: li }
+//ol > li:before {  color: var(--color-list-point); }
 
 //
 hr { border: none; border-top: var(--border); }
 
-main { width: $container-width;  max-width: $container-max-width;  margin-right: auto;  margin-left: auto; flex-grow:1; overflow-y: scroll;}
+main { width: $container-width;  max-width: $container-max-width;  margin-right: auto;  margin-left: auto; flex-grow:1; }
 
 .timestamp {
   float:right;
