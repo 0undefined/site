@@ -12,7 +12,7 @@ for development, use `zola serve`
 When deploying,
 
 ```
-zola build --base-url nelin.dk
+zola build
 zip -r nelin.zip public
 scp nelin.zip nelin.dk:~
 ssh nelin.dk unzip nelin.zip
