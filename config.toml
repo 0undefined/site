@@ -20,11 +20,11 @@ highlight_code = true
 [extra]
 
 nav_items = [
-  {name = "index", url = "$BASE_URL"},
+  {name = "index", url = "/"},
 
-  {name = "projects", url = "$BASE_URL/projects"},
-  {name = "posts", url = "$BASE_URL/posts"},
-  {name = "about me", url = "$BASE_URL/about"},
+  {name = "projects", url = "/projects"},
+  {name = "posts", url = "/posts"},
+  {name = "about me", url = "/about"},
 ]
 
 feet = [
