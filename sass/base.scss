@@ -25,6 +25,7 @@ $padding-sz:          6pt !default;
   --color-header:      var(--color-accent);//#70b950;
   --color-list-point:  var(--color-accent);//#8197bf;
 
+  --line-gap: 22pt;
 
   --border:            dashed 2pt var(--color-fg-d);
 }
@@ -33,7 +34,7 @@ $padding-sz:          6pt !default;
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0px;
-  margin-top: 22pt;
+  margin-top: var(--line-gap);
 
   font-size: $base-font-size;
   font-weight: bold;
@@ -43,6 +44,9 @@ h1, h2, h3, h4, h5, h6 {
 p, ul, ol {
   margin: 0px;
   color: var(--color-fg);
+}
+p {
+  margin-bottom: var(--line-gap);
 }
 a {
   text-decoration: underline;
