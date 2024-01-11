@@ -12,10 +12,13 @@ ofc.).
 
 ## About the site
 
-This is a static site hosted on [github pages](https://pages.github.com/), from which I can edit it in
-a local repository and push the changes/blog posts/etc.  whenever I see fit. I
-use cloudflare for the `domain->gh` stuff, and you can follow the tutorial
-[here](https://blog.cloudflare.com/secure-and-fast-github-pages-with-cloudflare/) if you want to.
+The site is build using [zola](https://www.getzola.org) and hosted somewhere in
+the cloud. The theme is based on my fork of the
+[jekyll console theme](https://github.com/b2a3e8/jekyll-theme-console), with
+some minor tweaks to make the theme more markdown-like.
 
-The theme is my own fork of [jekyll console theme](https://github.com/b2a3e8/jekyll-theme-console) which contains minor changes to
-better fit my taste.
+
+This site used to be hosted as a static site on
+[github pages](https://pages.github.com/) following
+[this](https://blog.cloudflare.com/secure-and-fast-github-pages-with-cloudflare/)
+tutorial.
