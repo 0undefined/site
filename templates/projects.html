@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+
+{% block title %}nelin/{{ page.title | safe }}{% endblock title %}
+{% block content %}
+{{ page.content | safe }}
+<hr/>
+
+{% if config.extra.projects %}
+<div class="projects">
+{% for project in config.extra.projects %}
+<a href="{{ project.url }}" class="project-card">
+  <div class="text">
+    <h3><i class="fa-{{ project.icon }}"></i> {{ project.name }}</h3>
+    <p>{{ project.description }}</p>
+  </div>
+  <div class="stats">
+    <img src="https://img.shields.io/github/stars/0undefined/{{ project.name }}?cacheSeconds=18000&style=flat" alt="Github repo stars">
+    <img src="https://img.shields.io/github/languages/top/0undefined/{{ project.name }}?cacheSeconds=18000" alt="Github top language">
+  </div>
+</a>
+{% endfor %}
+</div>
+{% endif %}
+{% endblock content %}

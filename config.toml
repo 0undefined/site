@@ -2,6 +2,7 @@
 base_url = "https://nelin.dk"
 
 title = "nelin's website"
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
@@ -30,4 +31,10 @@ nav_items = [
 feet = [
   {name = "github", url = "https://github.com/0undefined", newtab = true},
   {name = "twitter", url = "https://twitter.com/OscarNelin", newtab = true},
+]
+
+projects = [
+  {name = "daw", icon="solid fa-crow", url = "https://github.com/0undefined/daw", description = "A WIP game engine written in C."},
+  {name = "giz.sh", icon="brands fa-git-alt", url = "https://github.com/0undefined/giz.sh", description = "Github/Gittea-like git hosting site"},
+  {name = "btree", icon="solid fa-code-fork", url = "https://github.com/0undefined/btree", description = "C implementation of the B-Tree datastructure according to CLRS."},
 ]

@@ -5,13 +5,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src *" />
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
   <link rel="stylesheet" type="text/css" href="/base.css">
+  <link rel="stylesheet" type="text/css" href="/all.min.css">
+  <link rel="stylesheet" type="text/css" href="/brands.min.css">
   <title>{% block title %}{{ config.title }}{% endblock %}</title>
 </head>
 <body>
   <nav>
     <span>{{ config.title }}</span>
+    <details>
+      <summary>
+        <i class="fa-solid fa-bars"></i>
+      </summary>
+      <p>
+    {% for menu in config.extra.nav_items %}
+    <a href="{{ menu.url | replace(from="$BASE_URL", to=config.base_url) | safe }}">
+    {{ menu.name }}
+    </a>
+    {% endfor %}
+      </p>
+    </details>
     {% for menu in config.extra.nav_items %}
     <a href="{{ menu.url | replace(from="$BASE_URL", to=config.base_url) | safe }}">
     {{ menu.name }}
@@ -31,7 +45,7 @@ posts.
   <footer>
     {% for foot in config.extra.feet %}
     <a href="{{ foot.url | replace(from="$BASE_URL", to=config.base_url) | safe }}">
-    {{ foot.name }}
+      <i class="fa-brands fa-{{ foot.name|safe }}"></i>
     </a>
     {% endfor %}
   </footer>

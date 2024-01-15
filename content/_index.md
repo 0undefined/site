@@ -5,7 +5,7 @@ template = "index.html"
 
 # Oscar Nelin
 
-MSc. computer science student at University of Copenhagen.
+Cand. Scient. Computer Science @ University of Copenhagen.
 
 
 ## Interests & skills
@@ -16,5 +16,4 @@ MSc. computer science student at University of Copenhagen.
 * Parallel computing
 * Graphics, simulations and everything else which can be parallelized
 * Concurrent systems and networking (p2p applications to be specific)
-* Game related programming - _of which I am too embarrassed to show examples of, but not
-  too embarrassed to mention_
+* Game related programming
