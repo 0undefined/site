@@ -56,7 +56,27 @@ a {
 }
 a:hover { color: var(--color-bg); background-color: var(--color-fg); }
 
-@media only screen and (max-device-width: 500px) { * { font-size: $mobile-font-size !important; } }
+nav details {
+  display:none;
+  summary {
+    padding:0;
+    text-align:end;
+    i { padding:0; }
+  }
+  ::marker {
+    content: "";
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  * { font-size: $mobile-font-size !important; }
+  nav > a {
+    display:none !important;
+  }
+  nav details {
+    display:block !important;
+  }
+}
 
 body {
   margin:0;
@@ -96,16 +116,38 @@ nav * {
   box-sizing:border-box;
 }
 
+nav span {
+  flex-grow:1;
+}
+
+nav details,
 nav a {
   text-decoration: none;
 
   background-color: var(--color-bg-l);
-  border-left: $padding-sz solid var(--color-fg-d);
   font-weight:600;
+}
+nav > details > p {
+  padding: 0pt;
+  margin: 0pt;
+  display:flex;
+  flex-direction:column;
+  gap:$padding-sz;
+  > a {
+    text-align: end;
+  }
+}
+nav details a {
+  border-right: $padding-sz solid var(--color-fg-d);
+  display:block;
+}
+nav > a {
+  border-left: $padding-sz solid var(--color-fg-d);
 }
 
 nav a:hover {
   border-left-color: var(--color-accent);
+  border-right-color: var(--color-accent);
   color: var(--color-accent) !important;
   background-color: var(--color-bg-l);
   transition: 250ms ease-in-out;
@@ -142,4 +184,38 @@ main { width: $container-width;  max-width: $container-max-width;  margin-right:
 
 .timestamp {
   float:right;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap:$padding-sz;
+}
+.projects a {display:flex; justify-content:space-between; flex-direction: row;
+  padding: $padding-sz;
+  border: solid 1pt var(--color-fg);
+  border-left: solid $padding-sz;
+  text-decoration:none;
+}
+.projects a:hover {
+  border: solid 1pt var(--color-header);
+  border-left: solid $padding-sz var(--color-header);
+  div.text h3,
+  div.text p {
+    color:#000;
+  }
+}
+.projects a div.text {
+  display: flex;
+  flex-direction: column;
+  gap:$padding-sz;
+  h3:before { content: "";       margin-right: 0px; }
+  h3, { margin: 0px; font-size: 18pt; }
+  p { margin: 0px }
+}
+.projects a div.stats {
+  display: flex;
+  flex-direction: column;
+  gap:$padding-sz;
+  align-items:flex-end;
 }
