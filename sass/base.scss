@@ -17,13 +17,15 @@ $container-max-width: 60rem  !default;
 $padding-sz:          6pt !default;
 
 :root {
-  --color-bg:          #1d1a21;
-  --color-bg-l:        #2d2a31;
-  --color-fg:          #efefef;
-  --color-fg-d:        #999;
-  --color-accent:      #ff7a93;
+  --color-bg:          #1e2326;
+  --color-bg-l:        #3c4841;
+  --color-fg:          #d3c6aa;
+  --color-fg-d:        #7a8478;
+  --color-accent:      #a7c080;
   --color-header:      var(--color-accent);//#70b950;
   --color-list-point:  var(--color-accent);//#8197bf;
+
+  --color-blue: #7fbbb3;
 
   --line-gap: 22pt;
 
@@ -49,12 +51,18 @@ p {
   margin-bottom: var(--line-gap);
 }
 a {
-  text-decoration: underline;
-  text-decoration-thickness: 1pt;
   color: var(--color-fg);
   padding: 1pt;
 }
-a:hover { color: var(--color-bg); background-color: var(--color-fg); }
+a:hover {
+  color: var(--color-bg);
+  background-color: var(--color-fg);
+}
+p a {
+  color: var(--color-blue);
+  text-decoration: underline;
+  text-decoration-thickness: 1pt;
+}
 
 nav details {
   display:none;
@@ -218,4 +226,16 @@ main { width: $container-width;  max-width: $container-max-width;  margin-right:
   flex-direction: column;
   gap:$padding-sz;
   align-items:flex-end;
+}
+.social-icon,
+.social-icon > img {
+  height: 1pc;
+  width: 1pc;
+}
+code {
+  border: 1pt solid var(--border);
+  border-radius: 2pt;
+  padding: 0pt 2pt;
+  background-color: #000;
+  color: #fff;
 }

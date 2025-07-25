@@ -44,8 +44,8 @@ posts.
   </main>
   <footer>
     {% for foot in config.extra.feet %}
-    <a href="{{ foot.url | replace(from="$BASE_URL", to=config.base_url) | safe }}">
-      <i class="fa-brands fa-{{ foot.name|safe }}"></i>
+    <a class="social-icon" href="{{ foot.url | replace(from="$BASE_URL", to=config.base_url) | safe }}">
+      <img src="/{{ foot.name|safe }}.svg" alt="{{ foot.name|safe }} logo" />
     </a>
     {% endfor %}
   </footer>

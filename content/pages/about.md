@@ -5,14 +5,10 @@ path = "about"
 
 # About me
 
-Spent 7 years getting my Cand. Scient. Computer Science degree -- if I can do
-it, so can you!
-
-I enjoy beer, climbing, and handy-work. Love building custom mechanical keyboards!
+I like computers.
 
 
-
-## About the site
+## About this site
 
 The site is build using [zola](https://www.getzola.org) and hosted somewhere in
 the cloud. The theme is based on my fork of the
@@ -27,3 +23,6 @@ This site used to be hosted as a static site on
 tutorial. I wasn't aware that you could use Zola to generate github pages at the
 time though, but moving the site was somewhat a natural consequence of the fact
 that I wanted to host my personal email on the same domain.
+
+Checkout [hello world](@/posts/2019-09-28-hello-world.md) if you're more curious
+about the current setup.
