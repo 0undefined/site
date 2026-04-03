@@ -5,14 +5,15 @@ template = "index.html"
 
 # Oscar Nelin
 
-Cand. Scient. Computer Science @ University of Copenhagen.
+Development Operations Specialist, Computer Scientist at heart.
 
 
 ## Interests
 
-* Data parallel programming
 * Computational geometry
-* Programming language theory
+* Automation and infrastructure availability
 * Procedural generation
+* Data parallel programming
+* Programming language theory
 
 _I incidentally know a bit much about git_

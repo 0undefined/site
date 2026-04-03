@@ -18,7 +18,7 @@ $container-max-width: 60rem  !default;
 $padding-sz:          6pt !default;
 
 :root {
-  --line-gap: 22pt;
+  --line-gap: 11pt;
 
   --border:            dashed 2pt var(--color-fg);
 }
@@ -37,7 +37,11 @@ p, ul, ol {
   color: var(--color-fg);
 }
 p {
+  margin-top: var(--line-gap);
   margin-bottom: var(--line-gap);
+}
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
+  margin-top: 0;
 }
 a {
   color: var(--color-fg);
