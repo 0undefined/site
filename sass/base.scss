@@ -11,27 +11,16 @@
 $base-font-family:    sourcecodepro, monospace !default;
 $base-font-size:      12.5pt !default;
 $mobile-font-size:    12pt   !default;
+$mobile-font-size-nav:9pt   !default;
 $base-line-height:    1.5    !default;
 $container-width:     90%    !default;
 $container-max-width: 60rem  !default;
 $padding-sz:          6pt !default;
 
 :root {
-  --color-bg:          #1e2326;
-  --color-bg-l:        #3c4841;
-  --color-fg:          #d3c6aa;
-  --color-fg-d:        #7a8478;
-  --color-accent:      #a7c080;
-  --color-header:      var(--color-accent);//#70b950;
-  --color-list-point:  var(--color-accent);//#8197bf;
-
-  --color-blue: #7fbbb3;
-
   --line-gap: 22pt;
 
-  --border:            dashed 2pt var(--color-fg-d);
-}
-:root {
+  --border:            dashed 2pt var(--color-fg);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -41,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: $base-font-size;
   font-weight: bold;
 
-  color: var(--color-header);
+  color: var(--color-accent);
 }
 p, ul, ol {
   margin: 0px;
@@ -64,26 +53,15 @@ p a {
   text-decoration-thickness: 1pt;
 }
 
-nav details {
-  display:none;
-  summary {
-    padding:0;
-    text-align:end;
-    i { padding:0; }
-  }
-  ::marker {
-    content: "";
-  }
-}
-
 @media only screen and (max-width: 600px) {
   * { font-size: $mobile-font-size !important; }
-  nav > a {
-    display:none !important;
-  }
-  nav details {
-    display:block !important;
-  }
+  nav div a { font-size: $mobile-font-size-nav !important; }
+  //nav > a {
+  //  display:none !important;
+  //}
+  //nav details {
+  //  display:block !important;
+  //}
 }
 
 body {
@@ -102,62 +80,60 @@ body {
   color: var(--color-fg);
 }
 
-footer,
+body > div > img {
+  width: 16pt;
+  height: 16pt;
+}
+
+body > div {
+  display: flex;
+  align-items: center;
+  gap: $padding-sz;
+}
+
 nav {
+  border-bottom: 2pt solid;
+}
+nav div.container {
+  display:flex;
+  gap: $padding-sz;
+  align-items: end;
+}
+
+footer {
   margin:0;
   display:flex;
   gap: $padding-sz;
   padding:$padding-sz;
 }
 
-nav {
-  text-align: left;
-}
-
 footer {
   justify-content:center;
   padding-top:calc($padding-sz * 4);
 }
-
-nav * {
+body > div:nth-child(1) {
   padding: $padding-sz;
+}
+
+nav div * {
+  padding: calc($padding-sz / 2) $padding-sz;
   box-sizing:border-box;
+  height: fit-content;
 }
 
-nav span {
-  flex-grow:1;
-}
-
-nav details,
-nav a {
+nav div a {
   text-decoration: none;
-
-  background-color: var(--color-bg-l);
   font-weight:600;
 }
-nav > details > p {
-  padding: 0pt;
-  margin: 0pt;
-  display:flex;
-  flex-direction:column;
-  gap:$padding-sz;
-  > a {
-    text-align: end;
-  }
-}
-nav details a {
-  border-right: $padding-sz solid var(--color-fg-d);
-  display:block;
-}
-nav > a {
-  border-left: $padding-sz solid var(--color-fg-d);
+
+nav div > a.selected {
+  background-color: var(--color-fg);
+  color: var(--color-bg);
 }
 
-nav a:hover {
-  border-left-color: var(--color-accent);
-  border-right-color: var(--color-accent);
+nav div a:hover {
   color: var(--color-accent) !important;
-  background-color: var(--color-bg-l);
+  background-color: var(--color-bg-bright);
   transition: 250ms ease-in-out;
 }
 
@@ -170,7 +146,7 @@ h5:before { content: "#####";   margin-right: 9px; }
 h6:before { content: "######";  margin-right: 9px; }
 
 // Lists
-li:before { color: var(--color-list-point); margin-right: 1em; left: -1em; position: absolute; }
+li:before { color: var(--color-accent); margin-right: 1em; left: -1em; position: absolute; }
 
 :not(.menu) > ul { list-style: none;  padding-left: 0; list-style-type: none;
 width: 95%; }
@@ -182,13 +158,17 @@ width: 95%; }
 :not(.menu) > ol { list-style: none; padding-left: 0px; counter-reset: li }
 :not(.menu) > ol ol { padding-left: 2em }
 :not(.menu) > ol > li { position: relative; left: 1em; padding-left:$padding-sz;}
-:not(.menu) > ol > li::before { content: counter(li) ". "; color: var(--color-list-point); margin-right: 9px; counter-increment: li }
-//ol > li:before {  color: var(--color-list-point); }
+:not(.menu) > ol > li::before { content: counter(li) ". "; color: var(--color-accent); margin-right: 9px; counter-increment: li }
+//ol > li:before {  color: var(--color-accent); }
 
 //
 hr { border: none; border-top: var(--border); }
 
-main { width: $container-width;  max-width: $container-max-width;  margin-right: auto;  margin-left: auto; flex-grow:1; }
+.container
+{
+  width: $container-width;  max-width: $container-max-width;
+  margin-right: auto;  margin-left: auto; flex-grow:1;
+}
 
 .timestamp {
   float:right;
@@ -206,13 +186,13 @@ main { width: $container-width;  max-width: $container-max-width;  margin-right:
   text-decoration:none;
 }
 .projects a:hover {
-  border: solid 1pt var(--color-header);
-  border-left: solid $padding-sz var(--color-header);
-  div.text h3,
-  div.text p {
-    color:#000;
-  }
+  color: var(--color-accent) !important;
+  background-color: var(--color-bg-bright);
+  transition: 250ms ease-in-out;
+
+  border-color: var(--color-accent);
 }
+
 .projects a div.text {
   display: flex;
   flex-direction: column;
@@ -221,6 +201,7 @@ main { width: $container-width;  max-width: $container-max-width;  margin-right:
   h3, { margin: 0px; font-size: 18pt; }
   p { margin: 0px }
 }
+
 .projects a div.stats {
   display: flex;
   flex-direction: column;

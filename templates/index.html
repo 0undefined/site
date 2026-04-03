@@ -6,36 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src *" />
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="/everforest.css">
   <link rel="stylesheet" type="text/css" href="/base.css">
   <link rel="stylesheet" type="text/css" href="/all.min.css">
   <link rel="stylesheet" type="text/css" href="/brands.min.css">
   <title>{% block title %}{{ config.title }}{% endblock %}</title>
 </head>
 <body>
+  <div><img src="/favicon.png" alt="Onion with VCS branches"/>{{ config.title }}</div>
+
   <nav>
-    <span>{{ config.title }}</span>
-    <details>
-      <summary>
-        <i class="fa-solid fa-bars"></i>
-      </summary>
-      <p>
+    <div class="container">
+
     {% for menu in config.extra.nav_items %}
-    <a href="{{ menu.url | replace(from="$BASE_URL", to=config.base_url) | safe }}">
+    <a {% if current_path == menu.url %}class="selected" {% endif %} href="{{ menu.url | replace(from="$BASE_URL", to=config.base_url) | safe }}">
     {{ menu.name }}
     </a>
     {% endfor %}
-      </p>
-    </details>
-    {% for menu in config.extra.nav_items %}
-    <a href="{{ menu.url | replace(from="$BASE_URL", to=config.base_url) | safe }}">
-    {{ menu.name }}
-    </a>
-    {% endfor %}
+    </div>
   </nav>
   <main class="container">
 {% block content %}
 {{ section.content | safe }}
-
 <hr>
 
 Click <a href="{{ get_url(path='@/posts/_index.md') }}"> here</a> to see my
